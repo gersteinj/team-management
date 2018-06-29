@@ -15,13 +15,14 @@ class Profile(models.Model):
         (NB, 'non-binary/other'),
         (PRIVATE, 'prefer not to answer'),
     )
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    gender = models.CharField(choices=GENDER_CHOICES)
-    birthdate = models.DateField()
-    # is_active = models.BooleanField(default=True)
-    # is_student = models.BooleanField()
-    # is_alum = models.BooleanField()
-    # is_mentor = models.BooleanField()   
+    gender = models.CharField(choices=GENDER_CHOICES, max_length=10)
+    birthdate = models.DateField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    is_student = models.BooleanField(default=True)
+    is_alum = models.BooleanField(default=False)
+    is_mentor = models.BooleanField(default=False)   
 
     def __str__(self):
         return self.user.username
