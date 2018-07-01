@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'membership.apps.MembershipConfig',
+    # 'alumni.apps.AlumniConfig',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
