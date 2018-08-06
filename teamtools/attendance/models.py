@@ -24,6 +24,6 @@ class Entry(models.Model):
     date = models.DateField()
 
     enter_time = models.TimeField(auto_now_add=True)
-    exit_time = models.TimeField(blank=True, null=True)
+    exit_time = models.TimeField(auto_now=True, blank=True, null=True)
 
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
