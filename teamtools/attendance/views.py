@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import datetime
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Alumni info will be recorded here")
+    return HttpResponse("Hi!")

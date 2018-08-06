@@ -1,5 +1,5 @@
 """
-WSGI config for teamapp project.
+WSGI config for teamtools project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "teamapp.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "teamtools.settings")
 
 application = get_wsgi_application()
