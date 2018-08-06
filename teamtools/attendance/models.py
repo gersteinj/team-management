@@ -10,4 +10,20 @@ class Person(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.uid
+        if len(self.preferred) > 0:
+            return self.preferred
+        elif len(self.middle) > 0:
+            return ' '.join((self.first, self.middle, self.last))
+        else:
+            return ' '.join((self.first, self.last))
+
+
+class Entry(models.Model):
+    """Attendance at a meeting"""
+
+    date = models.DateField()
+
+    enter_time = models.TimeField(auto_now_add=True)
+    exit_time = models.TimeField(blank=True, null=True)
+
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
